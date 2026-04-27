@@ -1,67 +1,74 @@
 # Unit Converter – JavaFX Desktop Application
 
-A desktop unit conversion application developed in **Java** using **JavaFX** and **FXML**.  
-The project was designed with an object-oriented architecture to support multiple measurement categories, dynamic unit selection, reusable conversion logic, and a responsive graphical interface.
+A desktop unit conversion application built in **Java** with **JavaFX** and **FXML**.  
+The project focuses on clean object-oriented design, reusable conversion logic, and a responsive graphical interface.
 
 ---
 
 ## Features
 
-- Convert values between multiple unit systems
-- Clean JavaFX desktop interface
-- Multiple measurement categories:
-  - Length
-  - Area
-  - Volume
-  - Weight / Mass
-  - Speed
-  - Pressure
-  - Temperature
-  - Time
-  - Direction
-- Dynamic source / destination unit selection
+- Convert values across multiple measurement systems
+- Modern JavaFX desktop interface
+- Dynamic source / target unit selection
 - Swap source and destination units
 - Unit sorting options
 - Reusable conversion engine based on SI normalization
-- Custom icons and UI components
-- Logging system integration
+- Logging support
+
+### Supported Categories
+
+- Length
+- Area
+- Volume
+- Weight / Mass
+- Speed
+- Pressure
+- Temperature
+- Time
+- Direction
 
 ---
 
-## Technologies Used
+## Technologies
 
-- **Java**
-- **JavaFX**
-- **FXML**
-- Object-Oriented Programming
-- Design Patterns:
-  - Factory Pattern
-  - Flyweight Pattern
+- Java
+- JavaFX
+- FXML
 - Java Properties / Bindings
+- Object-Oriented Programming
+
+### Design Patterns
+
+- Factory Pattern
+- Flyweight Pattern
 
 ---
 
-## Project Structure
+## Run the Project
 
-```text
-src/
-├── application/
-│   ├── Main.java
-│   ├── Controller.java
-│   ├── Converter.java
-│   └── ConverterFrame.fxml
-│
-├── measures/
-│   └── MeasureType.java
-│
-├── measures/units/
-│   ├── Unit.java
-│   ├── BaseNumericUnit.java
-│   ├── DerivedNumericUnit.java
-│   ├── BaseSymbolicUnit.java
-│   ├── DecomposedUnit.java
-│   └── UnitsFactory.java
-│
-├── application/cells/
-├── utils/
-└── logger/
+### Option 1 — IDE (Recommended)
+
+Use Eclipse IDE or IntelliJ IDEA.
+
+1. Open the project folder  
+2. Select JDK 11+  
+3. Add JavaFX SDK libraries if needed  
+4. Run `src/application/Main.java`
+
+---
+
+### Option 2 — Command Line
+
+```bash
+javac --module-path /path/to/javafx-sdk/lib \
+--add-modules javafx.controls,javafx.fxml \
+-d bin $(find src -name "*.java")
+
+cp -r src/icons bin/
+cp src/application/*.fxml bin/application/
+cp src/application/*.css bin/application/
+cp src/application/cells/*.fxml bin/application/cells/
+
+java --module-path /path/to/javafx-sdk/lib \
+--add-modules javafx.controls,javafx.fxml \
+-cp bin application.Main
