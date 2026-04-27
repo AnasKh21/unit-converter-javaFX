@@ -1,0 +1,23 @@
+# Java compiled files
+*.class
+**/classes/
+**/bin/
+**/out/
+**/target/
+
+# IDE files
+.idea/
+*.iml
+.project
+.classpath
+.settings/
+.factorypath
+.nb-gradle/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Temp files
+*.tmp
+*.log
